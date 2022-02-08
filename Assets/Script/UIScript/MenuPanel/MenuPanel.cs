@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Model;
 public class MenuPanel : MonoBehaviour
 {
   //暂时现在这里存储相应的全局变量
@@ -47,6 +48,10 @@ public class MenuPanel : MonoBehaviour
           cg.interactable = false;
           cg.blocksRaycasts = false;
           Music1();
+          Staff1();
+          //启动游戏计时器
+          GameClockManager.Instance.refresh();
+          GameClockManager.Instance.is_start_game = true;
         });
         break;
       case "Music2":
@@ -78,6 +83,14 @@ public class MenuPanel : MonoBehaviour
       第一步，读取铺面json文件
       第二部，生成铺面的obj（有两种方式，1 全部生成在Scene上, 2 按照时间顺序逐步生成防止内存泄露
     */
-    
+
+    //测试部分
+    Application.targetFrameRate = 60;
+    //生成一个Note数据
+    Model.NoteModel note1 = new NoteModel(0, 10, new Vector3(0, 0, 0), new Vector3(0, -100, 0));
+    //生成一个Note预制体，并初始化其基本信息
+    GameObject yscA1 = Instantiate((GameObject)Resources.Load("NotePrefab/Ysc_a"));
+    yscA1.transform.position = note1.begin_pos;
+    yscA1.GetComponent<BaseNote>().initBaseNote(note1);
   }
 }

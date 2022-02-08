@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 97813976565621973}
   - component: {fileID: 97813976565621972}
+  - component: {fileID: 3767842100897851667}
   - component: {fileID: 6943896304563439440}
   - component: {fileID: 97813976565621963}
   m_Layer: 0
@@ -85,6 +86,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3767842100897851667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97813976565621962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419ff571918edcd4ca62e4211cce3894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_tapped: 0
+  is_moving: 1
+  is_inited: 0
+  Tapped:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6943896304563439440}
+        m_TargetAssemblyTypeName: YscA, Assembly-CSharp
+        m_MethodName: Tapped
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Destory:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6943896304563439440}
+        m_TargetAssemblyTypeName: YscA, Assembly-CSharp
+        m_MethodName: Destroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6943896304563439440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is_tapped: 0
+  destroy: 0
   animator: {fileID: 97813976565621963}
 --- !u!95 &97813976565621963
 Animator:
