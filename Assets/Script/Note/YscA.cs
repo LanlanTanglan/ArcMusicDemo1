@@ -22,6 +22,7 @@ public class YscA : MonoBehaviour
   {
     if (destroy)
     {
+      Debug.Log("删除物体");
       AnimatorStateInfo info = animator.GetCurrentAnimatorStateInfo(0);
       if (info.normalizedTime >= 1.0f)
       {
@@ -39,8 +40,9 @@ public class YscA : MonoBehaviour
 
   public void Destroy()
   {
-    animator.SetBool("is_tapped", false);
+    this.destroy = true;
+    Debug.Log("YscA: Destroy!!");
     animator.SetBool("is_dead", true);
-    destroy = true;
+    animator.SetBool("is_tapped", false);
   }
 }

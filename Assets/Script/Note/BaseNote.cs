@@ -38,21 +38,17 @@ public class BaseNote : MonoBehaviour
           Tapped.Invoke();
           Debug.Log("BaseNote 点击成功");
           //延后一段时间_销毁该物体，由动画自身调用
-          
+          Destroy(this.gameObject, 0.417f);
           //计数
         }
       }
       //位置刷新（目前默认是向下的）
-      this.transform.Translate(new Vector3(0, noteModel.speed/100 * Time.deltaTime,0));
+      this.transform.Translate(new Vector3(0, noteModel.speed / 100 * Time.deltaTime, 0));
     }
   }
   public void initBaseNote(NoteModel noteModel)
   {
     this.noteModel = noteModel;
     this.is_inited = true;
-  }
-  public void DestroyObj()
-  {
-      Destroy(this.gameObject);
   }
 }
