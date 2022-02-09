@@ -20,7 +20,7 @@ namespace Model
       this.end_time = end_time;
       this.begin_pos = begin_pos;
       this.end_pos = end_pos;
-      this.speed = -10;
+      this.speed = -300;
     }
   }
 }

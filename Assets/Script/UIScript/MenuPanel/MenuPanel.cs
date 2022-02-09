@@ -72,7 +72,7 @@ public class MenuPanel : MonoBehaviour
       在不同的铺面过程中，播放音乐是需要一定的延时才行
       那么全局计时器是大致从负数开始执行的
     */
-    AudioManager.Instance.AudioPlay("Speed_of_Light");
+    AudioManager.Instance.AudioDelayPlay("Speed_of_Light", 5f);
 
   }
 
@@ -87,10 +87,34 @@ public class MenuPanel : MonoBehaviour
     //测试部分
     Application.targetFrameRate = 60;
     //生成一个Note数据
-    Model.NoteModel note1 = new NoteModel(0, 10, new Vector3(0, 0, 0), new Vector3(0, -100, 0));
+    NoteModel note1 = new NoteModel(-5, 0.3328f, new Vector3(-300 / 100, 1599.84f / 100, 0), new Vector3(-300, 0, 0));
+    NoteModel note2 = new NoteModel(-5, 0.8757f, new Vector3(300 / 100, 1762.71f / 100, 0), new Vector3(300, 0, 0));
+    NoteModel note3 = new NoteModel(-5, 1.1232f, new Vector3(-300 / 100, 1836.96f / 100, 0), new Vector3(-300, 0, 0));
+    NoteModel note4 = new NoteModel(-5, 1.7056f, new Vector3(300 / 100, 2011.68f / 100, 0), new Vector3(300, 0, 0));
+    NoteModel note5 = new NoteModel(-5, 2.2048f, new Vector3(-300 / 100, 2161.44f / 100, 0), new Vector3(-300, 0, 0));
+    NoteModel note6 = new NoteModel(-5, 2.7456f, new Vector3(300 / 100, 2323.68f / 100, 0), new Vector3(300, 0, 0));
+    NoteModel note7 = new NoteModel(-5, 3.2864f, new Vector3(-300 / 100, 2485.92f / 100, 0), new Vector3(-300, 0, 0));
+    NoteModel note8 = new NoteModel(-5, 3.8272f, new Vector3(300 / 100, 2648.16f / 100, 0), new Vector3(300, 0, 0));
+    NoteModel note9 = new NoteModel(-5, 4.3264f, new Vector3(-300 / 100, 2797.92f / 100, 0), new Vector3(-300, 0, 0));
+    NoteModel note10 = new NoteModel(-5, 4.6592f, new Vector3(300 / 100, 2897.76f / 100, 0), new Vector3(300, 0, 0));
+
     //生成一个Note预制体，并初始化其基本信息
-    GameObject yscA1 = Instantiate((GameObject)Resources.Load("NotePrefab/Ysc_a"));
-    yscA1.transform.position = note1.begin_pos;
-    yscA1.GetComponent<BaseNote>().initBaseNote(note1);
+    initNote(note1);
+    initNote(note2);
+    initNote(note3);
+    initNote(note4);
+    initNote(note5);
+    initNote(note6);
+    initNote(note7);
+    initNote(note8);
+    initNote(note9);
+    initNote(note10);
+  }
+
+  public void initNote(NoteModel n)
+  {
+    GameObject y = Instantiate((GameObject)Resources.Load("NotePrefab/Ysc_a"));
+    y.transform.position = n.begin_pos;
+    y.GetComponent<BaseNote>().initBaseNote(n);
   }
 }

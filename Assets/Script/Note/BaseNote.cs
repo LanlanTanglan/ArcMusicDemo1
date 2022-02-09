@@ -38,7 +38,7 @@ public class BaseNote : MonoBehaviour
           Tapped.Invoke();
           Debug.Log("BaseNote 点击成功");
           //延后一段时间_销毁该物体，由动画自身调用
-          Destroy(this.gameObject, 0.417f);
+          Destroy(this.gameObject, 0.417f);//此方法不是正确的物体销毁方式
           //计数
         }
       }

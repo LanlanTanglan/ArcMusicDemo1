@@ -8,7 +8,7 @@ public class GameClockManager : MonoBehaviour
 
   public static GameClockManager Instance;
   public bool is_start_game = false;//游戏是否开始
-  public float game_time = 0;//游戏游玩时间
+  public float game_time = -5;//单个铺面全局时间
 
   void Awake()
   {
@@ -31,6 +31,6 @@ public class GameClockManager : MonoBehaviour
   public void refresh()
   {
     is_start_game = false;
-    game_time = 0;
+    game_time = -5;
   }
 }
