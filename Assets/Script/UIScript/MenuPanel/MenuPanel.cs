@@ -72,7 +72,7 @@ public class MenuPanel : MonoBehaviour
       在不同的铺面过程中，播放音乐是需要一定的延时才行
       那么全局计时器是大致从负数开始执行的
     */
-    AudioManager.Instance.AudioDelayPlay("Speed_of_Light", 5f);
+    AudioManager.Instance.AudioDelayPlay("Music/Speed_of_Light", 5f);
 
   }
 

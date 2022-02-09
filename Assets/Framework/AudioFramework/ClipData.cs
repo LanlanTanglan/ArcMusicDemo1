@@ -9,6 +9,6 @@ public class ClipData
   public AudioClip audiodata(string name)
   {
     Debug.Log("ClipData:  " + name);
-    return Resources.Load<AudioClip>("Music/" + name);
+    return Resources.Load<AudioClip>(name);
   }
 }

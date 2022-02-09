@@ -32,18 +32,23 @@ public class BaseNote : MonoBehaviour
       {
         Debug.Log("已点击");
         //判断是否在正确点击的范围内
-        if (Math.Abs(GameClockManager.Instance.game_time - noteModel.end_time) <= 0.1)
+        if (Math.Abs(GameClockManager.Instance.game_time - noteModel.end_time) <= 0.1 && is_tapped == false)
         {
+          is_tapped = true;
           //执行点击动画
           Tapped.Invoke();
           Debug.Log("BaseNote 点击成功");
+          //播放声音
+          AudioManager.Instance.AudioInstantiate("Sound/Srtr");
           //延后一段时间_销毁该物体，由动画自身调用
-          Destroy(this.gameObject, 0.417f);//此方法不是正确的物体销毁方式
+          Destroy(this.gameObject, 0.4f);//此方法不是正确的物体销毁方式
           //计数
         }
       }
       //位置刷新（目前默认是向下的）
       this.transform.Translate(new Vector3(0, noteModel.speed / 100 * Time.deltaTime, 0));
+      //超出边界则销毁
+      
     }
   }
   public void initBaseNote(NoteModel noteModel)
